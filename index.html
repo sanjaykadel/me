@@ -3070,34 +3070,19 @@
                     <h3 class="english">Quick Contact Form</h3>
                     <h3 class="nepali nepali-text">द्रुत सम्पर्क फारम</h3>
                     
-                    <form id="contact-form" action="https://formspree.io/f/mrgnnzln" method="POST">
-                        <div class="form-group">
-                            <label for="name" class="english">Name</label>
-                            <label for="name" class="nepali nepali-text">नाम</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" class="english">Email</label>
-                            <label for="email" class="nepali nepali-text">इमेल</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject" class="english">Subject</label>
-                            <label for="subject" class="nepali nepali-text">विषय</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" class="english">Message</label>
-                            <label for="message" class="nepali nepali-text">सन्देश</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn english">Send Message</button>
-                        <button type="submit" class="btn nepali nepali-text">सन्देश पठाउनुहोस्</button>
-                    </form>
+                   <form id="contact-form" action="https://formspree.io/f/mrgnnzln" method="POST">
+                    <label>
+                      Your email:
+                      <input type="email" name="email">
+                    </label>
+                    <label>
+                      Your message:
+                      <textarea name="message"></textarea>
+                    </label>
+                    <!-- your other form fields go here -->
+                    <button type="submit">Send</button>
+                  </form>
+
                 </div>
             </div>
         </div>
