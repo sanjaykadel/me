@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Current Time in Nepal – Nepal Time Now (NPT, UTC+5:45)</title>
+<meta name="description" content="Live current time in Nepal (Kathmandu, NPT, UTC+5:45) and the time difference between Nepal and your local time, calculated automatically from your browser's time zone.">
+<!-- TODO: replace with your real, stable URL. Never put visitor-specific data here. -->
+<link rel="canonical" href="https://example.com/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Current Time in Nepal – Nepal Time Now">
+<meta property="og:description" content="Live Nepal time (NPT, UTC+5:45) and how far ahead of or behind your local time it is.">
+<meta property="og:url" content="https://example.com/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#003893">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Current Time in Nepal",
+      "url": "https://example.com/",
+      "description": "Live current time in Nepal (Kathmandu, NPT, UTC+5:45) with an automatic time difference calculator.",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the time zone of Nepal?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nepal uses Nepal Time (NPT), which is UTC+5:45 all year. The IANA time zone name is Asia/Kathmandu." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Nepal use daylight saving time?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Nepal stays on UTC+5:45 all year. The difference with countries that change their clocks, such as the USA, UK and Australia, changes by one hour when they switch." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many hours ahead is Nepal?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It depends on where you are. Nepal is ahead of any place with a UTC offset below +5:45, such as the UK, most of Europe and the Americas, and behind places with a higher offset, such as Japan or eastern Australia. The calculator on this page works it out from your browser's time zone." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the time difference between Nepal and India?",
+          "acceptedAnswer": { "@type": "Answer", "text": "India uses UTC+5:30 all year, so Nepal is always 15 minutes ahead of India." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is Nepal's offset 45 minutes?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nepal chose UTC+5:45 in 1986 so that its standard time is close to the local solar time of Mount Everest and Kathmandu, and to set it apart from India's UTC+5:30." }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I calculate the time difference between Nepal and Japan, South Korea, the Gulf or Malaysia?",
+          "acceptedAnswer": { "@type": "Answer", "text": "These countries do not use daylight saving time, so the gap is constant. Nepal is 3 hours 15 minutes behind Japan and South Korea, 2 hours 15 minutes behind Malaysia, 1 hour 45 minutes ahead of the UAE, and 2 hours 45 minutes ahead of Qatar, Saudi Arabia and Kuwait." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#f6f7fb; --card:#ffffff; --ink:#14181f; --muted:#4a5363; --line:#d5d9e3;
+  --blue:#003893; --red:#b80f2a; --focus:#0a5cff;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1118; --card:#171b25; --ink:#eef1f7; --muted:#a9b2c3; --line:#2c3344;
+    --blue:#8fb3ff; --red:#ff7b8f; --focus:#8fb3ff;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.6}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:var(--blue);color:#fff;padding:.6rem 1rem;z-index:10}
+.skip:focus{left:8px;top:8px}
+.wrap{max-width:680px;margin:0 auto;padding:0 1rem}
+.hero{text-align:center;padding:2.2rem 0 1.4rem}
+h1{font-size:clamp(1.6rem,5vw,2.3rem);margin:0 0 .6rem;line-height:1.2}
+.big-clock{font-size:clamp(2.6rem,13vw,4.6rem);font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em;margin:.2rem 0;color:var(--blue)}
+.date{margin:0;color:var(--muted);font-size:1.05rem}
+.tz{margin:.2rem 0 0;color:var(--muted);font-size:.95rem}
+
+.site-header{border-bottom:1px solid var(--line);background:var(--card)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:52px}
+.brand{font-weight:800;font-size:1.15rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none;padding:.4rem 0}
+.brand:hover{color:var(--blue);text-decoration:underline}
+
+section{margin:1.6rem 0}
+h2{font-size:1.35rem;margin:0 0 .8rem}
+h3{font-size:1.05rem;margin:0 0 .3rem}
+
+.compare{display:flex;flex-direction:column;align-items:stretch;gap:.3rem}
+.tile{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:1rem 1.2rem;text-align:center}
+.tile h3{font-size:1rem;color:var(--muted);font-weight:600;margin:0}
+.tile .t{font-size:clamp(2rem,10vw,3rem);font-weight:700;font-variant-numeric:tabular-nums;line-height:1.15;margin:.15rem 0}
+.tile .d{margin:0;font-size:.95rem}
+.tile .z{margin:0;color:var(--muted);font-size:.9rem;overflow-wrap:anywhere}
+.tile.nepal{border-color:var(--blue)}
+.arrow{text-align:center;font-size:1.6rem;color:var(--muted);line-height:1}
+.diff{text-align:center;padding:.4rem .5rem}
+.diff .flag{font-size:1.1rem}
+.diff .amount{display:block;font-size:clamp(1.5rem,7vw,2.2rem);font-weight:800;line-height:1.2;color:var(--red)}
+.diff .dir{display:block;font-size:1.15rem;font-weight:600}
+.diff.same .amount{color:var(--blue)}
+.sentence{background:var(--card);border-left:5px solid var(--blue);border-radius:8px;padding:.8rem 1rem;margin:1rem 0 0;font-weight:500}
+.note{color:var(--muted);font-size:.9rem;margin:.6rem 0 0}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:480px}
+th,td{padding:.6rem .8rem;text-align:left;border-bottom:1px solid var(--line);font-size:.95rem}
+th{font-weight:700}
+tr:last-child td{border-bottom:0}
+caption{text-align:left;padding:.6rem .8rem;color:var(--muted);font-size:.9rem}
+
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;margin:.5rem 0;padding:.1rem 1rem}
+summary{cursor:pointer;font-weight:600;padding:.7rem 0}
+details p{margin:.2rem 0 .9rem}
+footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.9rem;text-align:center}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#compare-heading">Skip to time comparison</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="https://sanjaykadel.com.np">sanjaykadel</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Current Time in Nepal</h1>
+    <!-- Main Nepal clock. Keep your existing clock markup here if you prefer; only the IDs below are used by the script. -->
+    <div class="big-clock" id="hero-time" role="timer" aria-live="off" aria-label="Current time in Nepal">--:--:--</div>
+    <p class="date" id="hero-date">Loading date…</p>
+    <p class="tz">Kathmandu · Nepal Standard Time (NPT) · UTC+5:45 · <span lang="la">Asia/Kathmandu</span></p>
+    <noscript><p class="note">Turn on JavaScript to see the live time and your time difference.</p></noscript>
+  </div>
+</div>
+
+<main id="main" class="wrap">
+
+  <section aria-labelledby="compare-heading">
+    <h2 id="compare-heading">Nepal time vs your local time</h2>
+
+    <div class="compare">
+      <div class="tile" id="local-tile">
+        <h3>Your Local Time</h3>
+        <div class="t" id="local-time" role="timer" aria-live="off">--:--:--</div>
+        <p class="d" id="local-date">&nbsp;</p>
+        <p class="z" id="local-zone">Detecting your time zone…</p>
+      </div>
+
+      <div class="arrow" aria-hidden="true">↓</div>
+
+      <div class="diff" id="diff-box">
+        <span class="flag" aria-hidden="true">🇳🇵</span>
+        <span class="dir" id="diff-lead">Nepal is</span>
+        <span class="amount" id="diff-amount">—</span>
+        <span class="dir" id="diff-dir">&nbsp;</span>
+      </div>
+
+      <div class="arrow" aria-hidden="true">↓</div>
+
+      <div class="tile nepal">
+        <h3>Nepal Time</h3>
+        <div class="t" id="nepal-time" role="timer" aria-live="off">--:--:--</div>
+        <p class="d" id="nepal-date">&nbsp;</p>
+        <p class="z">NPT · UTC+5:45</p>
+      </div>
+    </div>
+
+    <!-- aria-live is only on this sentence, and the script only rewrites it when the wording changes. -->
+    <p class="sentence" id="diff-sentence" aria-live="polite">Calculating the difference…</p>
+    <p class="note" id="day-note"></p>
+    <p class="note">Your time zone comes from your browser. Nothing is sent anywhere and no location is looked up.</p>
+  </section>
+
+  <section aria-labelledby="about-heading">
+    <h2 id="about-heading">About Nepal time</h2>
+    <p>Nepal Standard Time (NPT) is <strong>UTC+5:45</strong>, one of the few time zones in the world with a 45-minute offset. Kathmandu, Pokhara and the rest of the country use the same time, and Nepal does not change its clocks for daylight saving time.</p>
+    <p>Because Nepal stays fixed while other countries move their clocks, the gap between Nepal and places like the USA, UK or Australia changes twice a year. The comparison above recalculates it from your browser's time zone, so it stays right during those changes.</p>
+  </section>
+
+  <section aria-labelledby="table-heading">
+    <h2 id="table-heading">Nepal time from countries where Nepalis live and work</h2>
+    <p>Many Nepalis work, study or have family in the Gulf, East Asia, South Asia, Europe, North America and Australia. This table shows how far Nepal is ahead of or behind a major city in each.</p>
+    <div class="tablewrap">
+      <table>
+        <caption>The middle column is calculated live in your browser. The last column shows the usual range across the year.</caption>
+        <thead>
+          <tr><th scope="col">Where</th><th scope="col">Nepal is right now</th><th scope="col">Usual range</th></tr>
+        </thead>
+        <tbody id="ref-rows">
+          <tr><th scope="row">UAE (Dubai)</th><td data-tz="Asia/Dubai">—</td><td>1:45 ahead, all year</td></tr>
+          <tr><th scope="row">Qatar (Doha)</th><td data-tz="Asia/Qatar">—</td><td>2:45 ahead, all year</td></tr>
+          <tr><th scope="row">Saudi Arabia (Riyadh)</th><td data-tz="Asia/Riyadh">—</td><td>2:45 ahead, all year</td></tr>
+          <tr><th scope="row">Kuwait</th><td data-tz="Asia/Kuwait">—</td><td>2:45 ahead, all year</td></tr>
+          <tr><th scope="row">Malaysia (Kuala Lumpur)</th><td data-tz="Asia/Kuala_Lumpur">—</td><td>2:15 behind, all year</td></tr>
+          <tr><th scope="row">Japan (Tokyo)</th><td data-tz="Asia/Tokyo">—</td><td>3:15 behind, all year</td></tr>
+          <tr><th scope="row">South Korea (Seoul)</th><td data-tz="Asia/Seoul">—</td><td>3:15 behind, all year</td></tr>
+          <tr><th scope="row">India (Kolkata)</th><td data-tz="Asia/Kolkata">—</td><td>0:15 ahead, all year</td></tr>
+          <tr><th scope="row">UK (London)</th><td data-tz="Europe/London">—</td><td>4:45–5:45 ahead</td></tr>
+          <tr><th scope="row">Germany (Berlin)</th><td data-tz="Europe/Berlin">—</td><td>3:45–4:45 ahead</td></tr>
+          <tr><th scope="row">USA (New York)</th><td data-tz="America/New_York">—</td><td>9:45–10:45 ahead</td></tr>
+          <tr><th scope="row">Canada (Toronto)</th><td data-tz="America/Toronto">—</td><td>9:45–10:45 ahead</td></tr>
+          <tr><th scope="row">Australia (Sydney)</th><td data-tz="Australia/Sydney">—</td><td>4:15–5:15 behind</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Ranges are hours:minutes and shift when daylight saving time starts or ends in those places. Large countries can have several time zones; each row shows one example city. Gulf countries, Malaysia, Japan and South Korea do not use daylight saving time, so those gaps stay fixed.</p>
+  </section>
+
+  <section aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Frequently asked questions</h2>
+    <details>
+      <summary>What is the time zone of Nepal?</summary>
+      <p>Nepal uses Nepal Time (NPT), which is UTC+5:45 all year. The IANA time zone name is Asia/Kathmandu.</p>
+    </details>
+    <details>
+      <summary>Does Nepal use daylight saving time?</summary>
+      <p>No. Nepal stays on UTC+5:45 all year. The difference with countries that change their clocks, such as the USA, UK and Australia, changes by one hour when they switch.</p>
+    </details>
+    <details>
+      <summary>How many hours ahead is Nepal?</summary>
+      <p>It depends on where you are. Nepal is ahead of any place with a UTC offset below +5:45, such as the UK, most of Europe and the Americas, and behind places with a higher offset, such as Japan or eastern Australia. The calculator on this page works it out from your browser's time zone.</p>
+    </details>
+    <details>
+      <summary>What is the time difference between Nepal and India?</summary>
+      <p>India uses UTC+5:30 all year, so Nepal is always 15 minutes ahead of India.</p>
+    </details>
+    <details>
+      <summary>Why is Nepal's offset 45 minutes?</summary>
+      <p>Nepal chose UTC+5:45 in 1986 so that its standard time is close to the local solar time of Mount Everest and Kathmandu, and to set it apart from India's UTC+5:30.</p>
+    </details>
+    <details>
+      <summary>How can I calculate the time difference between Nepal and Japan, South Korea, the Gulf or Malaysia?</summary>
+      <p>These countries do not use daylight saving time, so the gap is constant. Nepal is 3 hours 15 minutes behind Japan and South Korea, 2 hours 15 minutes behind Malaysia, 1 hour 45 minutes ahead of the UAE, and 2 hours 45 minutes ahead of Qatar, Saudi Arabia and Kuwait.</p>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Times are calculated in your browser from the IANA time zone database.</div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* CORE:START — pure functions, no DOM access */
+  var NEPAL_TZ = 'Asia/Kathmandu';
+  var cache = {};
+
+  function formatter(tz) {
+    if (!cache[tz]) {
+      cache[tz] = new Intl.DateTimeFormat('en-US', {
+        timeZone: tz, hourCycle: 'h23',
+        year: 'numeric', month: 'numeric', day: 'numeric',
+        hour: 'numeric', minute: 'numeric', second: 'numeric'
+      });
+    }
+    return cache[tz];
+  }
+
+  // Calendar/clock fields as they read on a wall clock in `tz` at instant `date`.
+  function getParts(tz, date) {
+    var p = {}, list = formatter(tz).formatToParts(date);
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].type !== 'literal') p[list[i].type] = parseInt(list[i].value, 10);
+    }
+    if (p.hour === 24) p.hour = 0;
+    return p;
+  }
+
+  // UTC offset of `tz` at `date`, in minutes (east of UTC is positive). Handles DST, :30 and :45 offsets.
+  function getOffsetMinutes(tz, date) {
+    var p = getParts(tz, date);
+    var wallAsUTC = Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute, p.second);
+    var instant = Math.floor(date.getTime() / 1000) * 1000; // drop milliseconds
+    return Math.round((wallAsUTC - instant) / 60000);
+  }
+
+  // Positive = Nepal ahead of the visitor, negative = behind, 0 = same.
+  function getDifferenceMinutes(visitorTz, date) {
+    return getOffsetMinutes(NEPAL_TZ, date) - getOffsetMinutes(visitorTz, date);
+  }
+
+  function plural(n, word) { return n + ' ' + word + (n === 1 ? '' : 's'); }
+
+  function durationText(totalMinutes) {
+    var abs = Math.abs(totalMinutes), h = Math.floor(abs / 60), m = abs % 60, out = [];
+    if (h) out.push(plural(h, 'hour'));
+    if (m) out.push(plural(m, 'minute'));
+    return out.join(' ');
+  }
+
+  function formatOffset(mins) {
+    var sign = mins < 0 ? '-' : '+', abs = Math.abs(mins), h = Math.floor(abs / 60), m = abs % 60;
+    return 'UTC' + sign + h + (m ? ':' + (m < 10 ? '0' : '') + m : '');
+  }
+
+  // Whole-day gap between the two calendar dates (Nepal minus visitor).
+  function dayDelta(visitorTz, date) {
+    var n = getParts(NEPAL_TZ, date), v = getParts(visitorTz, date);
+    return Math.round((Date.UTC(n.year, n.month - 1, n.day) - Date.UTC(v.year, v.month - 1, v.day)) / 86400000);
+  }
+
+  function describe(diff) {
+    if (diff === 0) return { amount: '', dir: 'the same as', sentence: 'Nepal and your local time are the same.' };
+    var dir = diff > 0 ? 'ahead of' : 'behind', amt = durationText(diff);
+    return { amount: amt, dir: dir, sentence: 'Nepal is ' + amt + ' ' + dir + ' your local time.' };
+  }
+  /* CORE:END */
+
+  /* ---------- DOM ---------- */
+  var $ = function (id) { return document.getElementById(id); };
+  var timeFmt = {}, dateFmt = {};
+
+  function fmtTime(tz, date, locale) {
+    var k = tz + '|' + locale;
+    if (!timeFmt[k]) timeFmt[k] = new Intl.DateTimeFormat(locale, { timeZone: tz, hour: 'numeric', minute: '2-digit', second: '2-digit' });
+    return timeFmt[k].format(date);
+  }
+  function fmtDate(tz, date, locale) {
+    var k = tz + '|' + locale;
+    if (!dateFmt[k]) dateFmt[k] = new Intl.DateTimeFormat(locale, { timeZone: tz, weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    return dateFmt[k].format(date);
+  }
+  function setText(el, txt) { if (el.textContent !== txt) el.textContent = txt; }
+
+  var visitorTz;
+  try { visitorTz = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch (e) {}
+  var tzOk = false;
+  if (visitorTz) { try { formatter(visitorTz); tzOk = true; } catch (e) {} }
+
+  var els = {
+    heroTime: $('hero-time'), heroDate: $('hero-date'),
+    lTime: $('local-time'), lDate: $('local-date'), lZone: $('local-zone'),
+    nTime: $('nepal-time'), nDate: $('nepal-date'),
+    amount: $('diff-amount'), dir: $('diff-dir'), lead: $('diff-lead'), box: $('diff-box'),
+    sentence: $('diff-sentence'), dayNote: $('day-note')
+  };
+  var refCells = document.querySelectorAll('#ref-rows td[data-tz]');
+
+  function tick() {
+    var now = new Date();
+
+    // Nepal (always shown)
+    var nepalTime = fmtTime(NEPAL_TZ, now, 'en-US');
+    var nepalDate = fmtDate(NEPAL_TZ, now, 'en-US');
+    setText(els.heroTime, nepalTime); setText(els.heroDate, nepalDate);
+    setText(els.nTime, nepalTime); setText(els.nDate, nepalDate);
+
+    // Reference table
+    for (var i = 0; i < refCells.length; i++) {
+      var tz = refCells[i].getAttribute('data-tz');
+      try {
+        var d = describe(getDifferenceMinutes(tz, now));
+        setText(refCells[i], d.amount ? d.amount + ' ' + d.dir.replace(' of', '') : 'same time');
+      } catch (e) {}
+    }
+
+    // Visitor
+    if (!tzOk) {
+      setText(els.lTime, '—');
+      setText(els.lZone, 'Your browser did not report a time zone.');
+      setText(els.amount, '—'); setText(els.dir, '');
+      setText(els.sentence, 'We could not detect your time zone, so the comparison is unavailable. Nepal time is shown above.');
+      return;
+    }
+
+    var loc = undefined; // visitor's own locale for their local time
+    setText(els.lTime, fmtTime(visitorTz, now, loc));
+    setText(els.lDate, fmtDate(visitorTz, now, loc));
+    setText(els.lZone, visitorTz.replace(/_/g, ' ') + ' · ' + formatOffset(getOffsetMinutes(visitorTz, now)));
+
+    var diff = getDifferenceMinutes(visitorTz, now), r = describe(diff);
+    if (diff === 0) {
+      setText(els.lead, 'Nepal and your local time are'); setText(els.amount, 'the same'); setText(els.dir, '');
+      els.box.classList.add('same');
+    } else {
+      setText(els.lead, 'Nepal is'); setText(els.amount, r.amount);
+      setText(els.dir, r.dir === 'ahead of' ? 'ahead of you' : 'behind you');
+      els.box.classList.remove('same');
+    }
+    setText(els.sentence, r.sentence); // only changes when the difference changes (e.g. DST switch)
+
+    var dd = dayDelta(visitorTz, now);
+    setText(els.dayNote, dd === 0 ? 'It is the same calendar day in Nepal and where you are.'
+      : dd > 0 ? 'In Nepal it is already ' + (dd === 1 ? 'the next day.' : dd + ' days later.')
+      : 'In Nepal it is still ' + (dd === -1 ? 'the previous day.' : Math.abs(dd) + ' days earlier.'));
+  }
+
+  function loop() {
+    tick();
+    setTimeout(loop, 1000 - (Date.now() % 1000) + 5); // re-align to the next second boundary
+  }
+  loop();
+})();
+</script>
+</body>
+</html>
