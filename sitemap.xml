@@ -10,7 +10,14 @@
 
   <!-- Secondary Tool: Preeti to Unicode Converter -->
   <url>
-    <loc>https://sanjaykadel.com.np/preeti-to-unicode/</loc>
+    <loc>https://sanjaykadel.com.np/pdftool.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sanjaykadel.com.np/preeti-to-unicode.html</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
